@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Harkkatyö</string>
+    <string name="app_name">Wordle App</string>
     <string name="del">DEL</string>
     <string name="m">M</string>
     <string name="n">N</string>

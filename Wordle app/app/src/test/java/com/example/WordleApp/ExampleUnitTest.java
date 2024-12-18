@@ -1,4 +1,4 @@
-package com.example.harkkaty;
+package com.example.WordleApp;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.harkkaty;
+package com.example.WordleApp;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;

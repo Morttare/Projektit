@@ -23,10 +23,10 @@
         android:layout_width="154dp"
         android:layout_height="75dp"
         android:layout_marginTop="650dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/found"
         android:text="@string/restart"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/k"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
@@ -387,7 +387,7 @@
     <TextView
         android:id="@+id/defView"
         android:layout_width="370dp"
-        android:layout_height="70dp"
+        android:layout_height="85dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/placeholder"

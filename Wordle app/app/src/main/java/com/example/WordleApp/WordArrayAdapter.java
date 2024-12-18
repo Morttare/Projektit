@@ -1,4 +1,4 @@
-package com.example.harkkaty;
+package com.example.WordleApp;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
