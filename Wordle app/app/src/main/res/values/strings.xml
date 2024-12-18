@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Harkkatyö</string>
+    <string name="del">DEL</string>
+    <string name="m">M</string>
+    <string name="n">N</string>
+    <string name="b">B</string>
+    <string name="v">V</string>
+    <string name="c">C</string>
+    <string name="x">X</string>
+    <string name="z">Z</string>
+    <string name="enter">ENTER</string>
+    <string name="l">L</string>
+    <string name="k">K</string>
+    <string name="j">J</string>
+    <string name="h">H</string>
+    <string name="g">G</string>
+    <string name="f">F</string>
+    <string name="s">S</string>
+    <string name="a">A</string>
+    <string name="p">P</string>
+    <string name="o">O</string>
+    <string name="u">U</string>
+    <string name="y">Y</string>
+    <string name="t">T</string>
+    <string name="r">R</string>
+    <string name="e">E</string>
+    <string name="w">W</string>
+    <string name="q">Q</string>
+    <string name="i">I</string>
+    <string name="d">D</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="restart">Restart</string>
+</resources>
