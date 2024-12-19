@@ -12,6 +12,7 @@
 ## Koulukompassi 
 
 - A group project, a program that shows Finnish schools and their statistics
+- My responsibility was mainly the backend code focused on High schools, as well as the graphs for them
 
 ## Target practice 
 
