@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs74inl3lxyc0"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_68fa1"]
+[ext_resource type="FontFile" uid="uid://xom778vhqidk" path="res://Font/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection_ii/ConnectionII.otf" id="2_l5oiv"]
+[ext_resource type="Texture2D" uid="uid://dcogcdornekls" path="res://background.png" id="2_vwk12"]
+[ext_resource type="TileSet" uid="uid://bwp3es45ge6l" path="res://ground_tileset.tres" id="4_2s2xu"]
+[ext_resource type="Texture2D" uid="uid://d0e40ovcxysvj" path="res://Individual Sprites/adventurer-idle-00.png" id="5_2phc4"]
+[ext_resource type="Texture2D" uid="uid://c2kk16vgm36en" path="res://Individual Sprites/adventurer-idle-01.png" id="6_ejmdu"]
+[ext_resource type="PackedScene" uid="uid://cewltspsj5pxm" path="res://Enemy.tscn" id="7_6bsf1"]
+[ext_resource type="PackedScene" uid="uid://50lnuntj7jt1" path="res://coin.tscn" id="8_eqyhl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5fyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2phc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ejmdu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Start" type="CanvasLayer"]
+script = ExtResource("1_68fa1")
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 192.0
+offset_right = 66.0
+offset_bottom = 247.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_l5oiv")
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -256.0
+offset_right = 66.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_l5oiv")
+text = "Quit
+"
+
+[node name="HowTo" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 66.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l5oiv")
+text = "How to play"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(580, 324)
+scale = Vector2(2.41667, 2.7)
+texture = ExtResource("2_vwk12")
+
+[node name="HowToLabel" type="Label" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -52.0
+offset_right = -56.0
+offset_bottom = 116.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.992157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l5oiv")
+theme_override_font_sizes/font_size = 30
+text = "Use arrow keys 
+or W, A, D for movement 
+and space for attacking!"
+
+[node name="GameName" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.0
+offset_top = 56.0
+offset_right = 240.0
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l5oiv")
+theme_override_font_sizes/font_size = 70
+text = "Pixel Paladin"
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("4_2s2xu")
+format = 2
+layer_0/tile_data = PackedInt32Array(851993, 0, 5, 917529, 0, 6, 983065, 0, 2, 1048601, 0, 3, 1114137, 0, 2, 1179673, 0, 3, 1245209, 0, 2, 851994, 65536, 5, 917530, 65536, 6, 983066, 196608, 3, 1048602, 196608, 3, 1114138, 196608, 3, 1179674, 131072, 4, 1245210, 196608, 3, 851995, 131072, 5, 917531, 131072, 6, 983067, 196608, 3, 1048603, 262144, 3, 1114139, 262144, 3, 1179675, 196608, 3, 1245211, 262144, 3, 851996, 196608, 5, 917532, 196608, 6, 983068, 262144, 3, 1048604, 196608, 3, 1114140, 196608, 3, 1179676, 131072, 4, 1245212, 327680, 3, 851997, 327680, 5, 917533, 327680, 6, 983069, 327680, 3, 1048605, 262144, 3, 1114141, 196608, 3, 1179677, 131072, 4, 1245213, 131072, 4, 851998, 393216, 5, 917534, 393216, 6, 983070, 262144, 3, 1048606, 327680, 3, 1114142, 262144, 3, 1179678, 262144, 3, 1245214, 131072, 4, 851999, 458752, 5, 917535, 458752, 6, 983071, 327680, 3, 1048607, 327680, 3, 1114143, 327680, 3, 1179679, 327680, 3, 1245215, 131072, 4, 852000, 524288, 5, 917536, 524288, 6, 983072, 524288, 2, 1048608, 524288, 3, 1114144, 524288, 2, 1179680, 524288, 3, 1245216, 524288, 2, 917507, 0, 5, 983043, 0, 6, 1048579, 0, 2, 1114115, 0, 3, 1179651, 0, 2, 1245187, 0, 3, 917508, 65536, 5, 983044, 65536, 6, 1048580, 196608, 3, 1114116, 196608, 3, 1179652, 196608, 3, 1245188, 131072, 4, 917509, 131072, 5, 983045, 131072, 6, 1048581, 196608, 3, 1114117, 262144, 3, 1179653, 262144, 3, 1245189, 196608, 3, 917510, 196608, 5, 983046, 196608, 6, 1048582, 262144, 3, 1114118, 196608, 3, 1179654, 196608, 3, 1245190, 131072, 4, 917511, 327680, 5, 983047, 327680, 6, 1048583, 327680, 3, 1114119, 262144, 3, 1179655, 196608, 3, 1245191, 131072, 4, 917512, 393216, 5, 983048, 393216, 6, 1048584, 262144, 3, 1114120, 327680, 3, 1179656, 262144, 3, 1245192, 262144, 3, 917513, 458752, 5, 983049, 458752, 6, 1048585, 327680, 3, 1114121, 327680, 3, 1179657, 327680, 3, 1245193, 327680, 3, 917514, 524288, 5, 983050, 524288, 6, 1048586, 524288, 2, 1114122, 524288, 3, 1179658, 524288, 2, 1245194, 524288, 3, 1310723, 0, 2, 1310724, 196608, 3, 1310725, 262144, 3, 1310726, 327680, 3, 1310727, 131072, 4, 1310728, 131072, 4, 1310729, 131072, 4, 1310730, 524288, 2, 1310745, 0, 3, 1310746, 131072, 4, 1310747, 131072, 4, 1310748, 131072, 4, 1310749, 196608, 3, 1310750, 262144, 3, 1310751, 327680, 3, 1310752, 524288, 3)
+
+[node name="Character" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 416)
+scale = Vector2(3.858, 3.858)
+sprite_frames = SubResource("SpriteFrames_d5fyt")
+animation = &"idle"
+frame_progress = 0.617363
+
+[node name="Enemy" parent="." instance=ExtResource("7_6bsf1")]
+position = Vector2(824, 424)
+moveDist = 200
+
+[node name="Coin" parent="." instance=ExtResource("8_eqyhl")]
+position = Vector2(576, 544)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HowTo" to="." method="_on_how_to_pressed"]

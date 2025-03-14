@@ -1,0 +1,153 @@
+[gd_scene load_steps=21 format=3 uid="uid://cewltspsj5pxm"]
+
+[ext_resource type="Texture2D" path="res://Sprites/Enemy.png" id="1_la5nw"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_vy7kl"]
+[ext_resource type="Texture2D" uid="uid://dmu5y521p0npr" path="res://slime-Sheet.png" id="3_6g72h"]
+[ext_resource type="AudioStream" uid="uid://skvpu2pbddfk" path="res://Audio/167074__drminky__slime-death-1.wav" id="4_dorn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nanql"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(160, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yhcd"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(0, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m3o8"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(32, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_douh7"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(64, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0if5q"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(96, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypt0q"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(128, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkvkn"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(160, 50, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euio8"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5hs4"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(32, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajvcw"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(64, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s88is"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(96, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv4ac"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(128, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wotlh"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(160, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1263"]
+atlas = ExtResource("3_6g72h")
+region = Rect2(192, 0, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crn3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nanql")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yhcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m3o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_douh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0if5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypt0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkvkn")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euio8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5hs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajvcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s88is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv4ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wotlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1263")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqnk8"]
+radius = 16.0
+height = 32.0
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+script = ExtResource("1_vy7kl")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_la5nw")
+
+[node name="AnimSlime" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_crn3q")
+animation = &"die"
+frame = 5
+frame_progress = 0.251634
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_iqnk8")
+
+[node name="DeathTimer" type="Timer" parent="."]
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dorn5")
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

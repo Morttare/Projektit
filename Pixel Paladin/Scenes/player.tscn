@@ -1,0 +1,219 @@
+[gd_scene load_steps=39 format=3 uid="uid://dt7wn11icyjym"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_y01lp"]
+[ext_resource type="Texture2D" path="res://Sprites/Player_Idle.png" id="2_p5lkw"]
+[ext_resource type="Texture2D" uid="uid://mjxnutas4c8k" path="res://Individual Sprites/adventurer-idle-2-00.png" id="3_pnep7"]
+[ext_resource type="Texture2D" uid="uid://lu08gl0acpum" path="res://Individual Sprites/adventurer-air-attack1-00.png" id="3_varyf"]
+[ext_resource type="Texture2D" uid="uid://c6nch7canc501" path="res://Individual Sprites/adventurer-idle-2-01.png" id="4_map4v"]
+[ext_resource type="Texture2D" uid="uid://bq5g6vh6i8yji" path="res://Individual Sprites/adventurer-air-attack1-01.png" id="4_ukl1f"]
+[ext_resource type="Texture2D" uid="uid://bneod0anmth8q" path="res://Individual Sprites/adventurer-air-attack1-02.png" id="5_apitg"]
+[ext_resource type="Texture2D" uid="uid://dx3ju3notfr4j" path="res://Individual Sprites/adventurer-idle-2-02.png" id="5_eo75g"]
+[ext_resource type="Texture2D" uid="uid://bhydky5bs3tsn" path="res://Individual Sprites/adventurer-attack1-00.png" id="5_x0lld"]
+[ext_resource type="Texture2D" uid="uid://4uhr3agqvx1s" path="res://Individual Sprites/adventurer-air-attack1-03.png" id="6_elum8"]
+[ext_resource type="Texture2D" uid="uid://5ajfivfdjiek" path="res://Individual Sprites/adventurer-idle-2-03.png" id="6_jdeh7"]
+[ext_resource type="Texture2D" uid="uid://dkogvcsirca0y" path="res://Individual Sprites/adventurer-attack1-01.png" id="6_rcy75"]
+[ext_resource type="Texture2D" uid="uid://cbbifybmo6tlo" path="res://Individual Sprites/adventurer-jump-00.png" id="7_kp8ji"]
+[ext_resource type="Texture2D" uid="uid://dba5je3fthluw" path="res://Individual Sprites/adventurer-attack1-02.png" id="7_sh0d3"]
+[ext_resource type="Texture2D" uid="uid://chw4b0pfvwxar" path="res://Individual Sprites/adventurer-attack1-03.png" id="8_3jd01"]
+[ext_resource type="Texture2D" uid="uid://csegc2pstxbdv" path="res://Individual Sprites/adventurer-jump-01.png" id="8_all1y"]
+[ext_resource type="Texture2D" uid="uid://de3oxlcm342yb" path="res://Individual Sprites/adventurer-attack1-04.png" id="9_5wbha"]
+[ext_resource type="Texture2D" uid="uid://yd6swxo0eyi2" path="res://Individual Sprites/adventurer-jump-02.png" id="9_7o5ew"]
+[ext_resource type="Texture2D" uid="uid://7hbfyadu75ap" path="res://Individual Sprites/adventurer-jump-03.png" id="10_v2ua4"]
+[ext_resource type="Texture2D" uid="uid://dt7asm6e2v7di" path="res://Individual Sprites/adventurer-fall-00.png" id="11_cgnfa"]
+[ext_resource type="Texture2D" uid="uid://c365kjm66mg3e" path="res://Individual Sprites/adventurer-fall-01.png" id="12_47g1m"]
+[ext_resource type="Texture2D" uid="uid://d177j0oy38a05" path="res://Individual Sprites/adventurer-smrslt-00.png" id="13_cdhcn"]
+[ext_resource type="Texture2D" uid="uid://eqjxhuwlxoty" path="res://Individual Sprites/adventurer-run-00.png" id="13_qotuu"]
+[ext_resource type="Texture2D" uid="uid://b81f7c4yv67sw" path="res://Individual Sprites/adventurer-run-01.png" id="14_33vo5"]
+[ext_resource type="Texture2D" uid="uid://q0fhdrbuhk6f" path="res://Individual Sprites/adventurer-smrslt-01.png" id="14_m5ju1"]
+[ext_resource type="Texture2D" uid="uid://bi1vy4gh7nt31" path="res://Individual Sprites/adventurer-smrslt-02.png" id="15_tvva0"]
+[ext_resource type="Texture2D" uid="uid://dgkcy3ekpekvc" path="res://Individual Sprites/adventurer-run-02.png" id="15_w7lc8"]
+[ext_resource type="Texture2D" uid="uid://dykfufkq2ytb6" path="res://Individual Sprites/adventurer-smrslt-03.png" id="16_ls0ph"]
+[ext_resource type="Texture2D" uid="uid://10m4btsoke7r" path="res://Individual Sprites/adventurer-run-03.png" id="16_mxhk8"]
+[ext_resource type="Texture2D" uid="uid://bagfse00ioikj" path="res://Individual Sprites/adventurer-run-04.png" id="17_ofnrp"]
+[ext_resource type="Texture2D" uid="uid://bj0hllx5j5it3" path="res://Individual Sprites/adventurer-run-05.png" id="18_casb3"]
+[ext_resource type="AudioStream" uid="uid://f5ddqmnafrac" path="res://Audio/footstep_concrete_002.ogg" id="32_6pfaa"]
+[ext_resource type="AudioStream" uid="uid://cc16x7orup72l" path="res://Audio/574821__wesleyextreme_gamer__slash1.ogg" id="33_wmfpb"]
+[ext_resource type="AudioStream" uid="uid://rresthtbsuck" path="res://Audio/135936__bradwesson__collectcoin.wav" id="34_xbpm6"]
+[ext_resource type="AudioStream" uid="uid://b5l84y2thffpe" path="res://Audio/667297__pekena_larva__voc_male_jump_05.wav" id="35_0tole"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncvhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_varyf")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_ukl1f")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_apitg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_elum8")
+}],
+"loop": true,
+"name": &"air_hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cgnfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_47g1m")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x0lld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rcy75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sh0d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3jd01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5wbha")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pnep7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_map4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eo75g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jdeh7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_kp8ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_all1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7o5ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v2ua4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cdhcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m5ju1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tvva0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ls0ph")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_qotuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_33vo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w7lc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mxhk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ofnrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_casb3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mwgk"]
+radius = 24.0
+height = 96.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bre05"]
+size = Vector2(112, 160)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_y01lp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_p5lkw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.85811, 3.85811)
+sprite_frames = SubResource("SpriteFrames_ncvhk")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_0mwgk")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HitArea" type="Area2D" parent="."]
+collision_layer = 1023
+collision_mask = 1023
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+visible = false
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_bre05")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_6pfaa")
+volume_db = -5.0
+
+[node name="StepTimer" type="Timer" parent="Footsteps"]
+wait_time = 0.15
+
+[node name="Sword" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_wmfpb")
+volume_db = -15.0
+
+[node name="CoinCollect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_xbpm6")
+
+[node name="Jumping" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_0tole")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
+[connection signal="timeout" from="Footsteps/StepTimer" to="." method="_on_step_timer_timeout"]

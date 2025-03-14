@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt5bn27ihap41"]
+
+[ext_resource type="Script" path="res://end.gd" id="1_xy7mn"]
+[ext_resource type="Texture2D" uid="uid://dcogcdornekls" path="res://background.png" id="2_mvk2v"]
+[ext_resource type="FontFile" uid="uid://xom778vhqidk" path="res://Font/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection_ii/ConnectionII.otf" id="3_o5vob"]
+
+[node name="End" type="CanvasLayer"]
+script = ExtResource("1_xy7mn")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 320)
+scale = Vector2(2.74583, 2.74583)
+texture = ExtResource("2_mvk2v")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o5vob")
+theme_override_font_sizes/font_size = 50
+text = "Final score:"
+
+[node name="NumberLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_top = 80.0
+offset_right = 206.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o5vob")
+theme_override_font_sizes/font_size = 50
+text = "0/10"
+
+[node name="TextLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -116.0
+offset_right = 551.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.996078, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_o5vob")
+theme_override_font_sizes/font_size = 30
+text = "Placeholder text, that is long enough for me to see how it looks like"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgainButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 36.0
+offset_right = 54.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o5vob")
+theme_override_font_sizes/font_size = 20
+text = "Try AGAIN?"
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -144.0
+offset_right = 21.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o5vob")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[connection signal="pressed" from="AgainButton" to="." method="_on_again_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
