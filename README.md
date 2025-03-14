@@ -1,5 +1,8 @@
 # Projects
 
+## Pixel Paladin
+
+- A small 2D platformer made with Godot
 
 ## Wordle app 
 
