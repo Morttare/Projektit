@@ -1,5 +1,12 @@
 # Projects
 
+## PassManager
+
+- An Android-based password manager app
+
+## Pixel Paladin
+
+- A small 2D platformer made with Godot
 
 ## Wordle app 
 
